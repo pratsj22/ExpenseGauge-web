@@ -137,12 +137,6 @@ function App() {
             <a href="/downloads/ExpenseGauge.apk" download className="bg-white text-purple-700 dark:text-purple-900 px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition duration-300 ease-in-out shadow-lg">
               Download for Android (APK)
             </a>
-            {/* You can add links for other platforms if available */}
-            {/*
-            <a href="#" className="bg-gray-800 text-white px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-700 transition duration-300 ease-in-out shadow-lg">
-              Download for iOS (Coming Soon)
-            </a>
-            */}
           </div>
         </div>
       </section>
