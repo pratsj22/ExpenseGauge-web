@@ -134,7 +134,7 @@ function App() {
           <h3 className="text-4xl font-bold mb-6">Ready to Take Control of Your Finances?</h3>
           <p className="text-xl mb-10 opacity-90">Download ExpenseGauge today and experience a smarter way to manage your money.</p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <a href="/downloads/ExpenseGauge.apk" download className="bg-white text-purple-700 dark:text-purple-900 px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition duration-300 ease-in-out shadow-lg">
+            <a href={VITE_APP_APK_DOWNLOAD_URL} download className="bg-white text-purple-700 dark:text-purple-900 px-10 py-4 rounded-full text-xl font-bold hover:bg-gray-200 transition duration-300 ease-in-out shadow-lg">
               Download for Android (APK)
             </a>
           </div>
