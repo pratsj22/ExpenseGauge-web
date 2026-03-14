@@ -106,7 +106,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans">
+    <div className={`min-h-screen ${isDarkMode ? "dark" : ""} bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans`}>
       {/* Navbar */}
       <nav className="sticky top-0 z-50 border-b border-black/5 dark:border-white/10 bg-white/80 dark:bg-slate-950/70 backdrop-blur supports-backdrop-filter:bg-white/60">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5">
@@ -114,26 +114,38 @@ function App() {
             <img src={getFaviconUrl()} alt="ExpenseGauge Logo" className="h-8 w-10" />
             <h1 className="text-lg font-semibold tracking-tight text-slate-900 dark:text-slate-100">ExpenseGauge</h1>
           </div>
-          <div className="hidden sm:flex items-center gap-6 text-sm">
-            <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Features</a>
-            <a href="#screenshots" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Screenshots</a>
-            <a href="#download" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Download</a>
-          </div>
-          <div className="sm:hidden">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 hover:bg-black/5 dark:text-slate-200 dark:hover:bg-white/10 focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-                ></path>
-              </svg>
-            </button>
+          <div className='flex gap-5'>
+            {
+              isDarkMode ?
+              <button onClick={() => setIsDarkMode(!isDarkMode)} title='Set Light Theme'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></svg>
+                </button>
+                :
+                <button onClick={() => setIsDarkMode(!isDarkMode)} title='Set Dark Theme'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /></svg>
+                </button>
+            }
+            <div className="hidden sm:flex items-center gap-6 text-sm">
+              <a href="#features" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Features</a>
+              <a href="#screenshots" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Screenshots</a>
+              <a href="#download" className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">Download</a>
+            </div>
+            <div className="sm:hidden">
+              <button
+                onClick={toggleMenu}
+                className="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 hover:bg-black/5 dark:text-slate-200 dark:hover:bg-white/10 focus:outline-none"
+                aria-label="Toggle menu"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
